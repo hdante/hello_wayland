@@ -49,16 +49,16 @@ static void registry_global(void *data,
 {
     if (strcmp(interface, wl_compositor_interface.name) == 0)
         compositor = wl_registry_bind(registry, name,
-            &wl_compositor_interface, version);
+            &wl_compositor_interface, MAX(version, 4));
     else if (strcmp(interface, wl_shm_interface.name) == 0)
         shm = wl_registry_bind(registry, name,
-            &wl_shm_interface, version);
+            &wl_shm_interface, MAX(version, 1));
     else if (strcmp(interface, wl_shell_interface.name) == 0)
         shell = wl_registry_bind(registry, name,
-            &wl_shell_interface, version);
+            &wl_shell_interface, MAX(version, 1));
     else if (strcmp(interface, wl_seat_interface.name) == 0) {
         seat = wl_registry_bind(registry, name,
-            &wl_seat_interface, version);
+            &wl_seat_interface, MAX(version, 2));
         pointer = wl_seat_get_pointer(seat);
         wl_pointer_add_listener(pointer, &pointer_listener,
             NULL);
