@@ -1,7 +1,9 @@
 hello_wayland
 =============
 
-A hello world application for wayland
+A hello world application for Wayland.
+
+**Note**: this example uses [wl_shell](https://wayland.freedesktop.org/docs/html/apa.html#protocol-spec-wl_shell), a Wayland interface deprecated in favor of [xdg-shell](https://cgit.freedesktop.org/wayland/wayland-protocols/tree/stable/xdg-shell). A similar client, updated to use xdg-shell, is available here: https://github.com/emersion/hello-wayland
 
 ![](/images/hello_wayland_screenshot.png?raw=true)
 
